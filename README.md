@@ -38,4 +38,33 @@ Created several high-signal features to boost model performance:
 * **`percent_sessions_in_last_month`**: Captured recent engagement spikes.
 * **`km_per_hour`**: Calculated average speed as a proxy for traffic/driving type.
 
-### 4. Modeling &
+### 4. Modeling & Evaluation
+I tested three different modeling approaches to find the best predictor:
+
+| Model | Precision | Recall | F1-Score |
+| :--- | :---: | :---: | :---: |
+| Logistic Regression | 0.53 | 0.11 | 0.18 |
+| Random Forest | 0.49 | 0.11 | 0.18 |
+| **XGBoost (Champion)** | **0.41** | **0.17** | **0.23** |
+
+> **Note on Champion Model:** XGBoost was selected as the champion. While recall is low (17%), it provided a **50% improvement** over the baseline Logistic Regression model. **Feature Engineering** proved vital, as engineered features were among the top predictors.
+
+---
+
+## 📈 Key Insights & Business Recommendations
+
+* **The "Super Driver" Discrepancy:** Users who drive extremely long distances on fewer days (likely long-haul or commercial drivers) have a higher churn rate. 
+    * *Recommendation:* Investigate if the app lacks features for larger vehicles or professional routing.
+* **Engagement Decay:** The strongest predictor of churn was `activity_days`. A drop in the frequency of app openings is a more reliable churn signal than total distance driven.
+* **Retention Strategy:** Marketing efforts should target users whose `activity_days` decrease by more than **20% week-over-week**, regardless of their total mileage.
+
+---
+
+## 📂 Repository Content
+* `waze_eda_and_visualization.ipynb`: Data cleaning and visual storytelling.
+* `waze_hypothesis_testing.ipynb`: Statistical analysis of device usage.
+* `waze_machine_learning_model.ipynb`: Random Forest and XGBoost implementation.
+* `waze_dataset.csv`: Synthetic user data provided by Waze/Google.
+
+---
+*This project was completed as part of the Google Advanced Data Analytics Professional Certificate.*
