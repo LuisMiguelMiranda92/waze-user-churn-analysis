@@ -59,12 +59,4 @@ I tested three different modeling approaches to find the best predictor:
 * **Retention Strategy:** Marketing efforts should target users whose `activity_days` decrease by more than **20% week-over-week**, regardless of their total mileage.
 
 ---
-
-## 📂 Repository Content
-* `waze_eda_and_visualization.ipynb`: Data cleaning and visual storytelling.
-* `waze_hypothesis_testing.ipynb`: Statistical analysis of device usage.
-* `waze_machine_learning_model.ipynb`: Random Forest and XGBoost implementation.
-* `waze_dataset.csv`: Synthetic user data provided by Waze/Google.
-
----
 *This project was completed as part of the Google Advanced Data Analytics Professional Certificate.*
